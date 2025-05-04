@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SignUpModal = () => {
+
+    const [spanErro, setSpanErro] = useState(false);
+
+    const showError = (input) => {
+        input.classList.add('erro');
+        setTimeout(() => {
+            setSpanErro(true);
+        }, 520)
+    };
+
+    const hiddenError = (input) => {
+        input.classList.remove('erro');
+        setSpanErro(false);
+    };
+
+    const handleValidator = () => {
+        const nameInput = document.querySelector('#name') as HTMLInputElement;
+
+        if (!nameInput) return;
+
+        if (nameInput.value === '') {
+            showError(nameInput);
+        } else {
+            hiddenError(nameInput);
+        }
+    };
+
+
     return (
         <section className="SignUpModal">
             <h1>Welcome to CodeLeap network!</h1>
@@ -11,7 +39,8 @@ const SignUpModal = () => {
             >
                 <div className="form-group">
                     <label htmlFor="name">Please enter your username</label>
-                    <input type="text" name="name" id="name" placeholder="John doe"/>
+                    <input onInput={handleValidator} type="text" name="name" id="name" placeholder="John doe"/>
+                    {spanErro && <span className="error">Please enter your name.</span>}
                 </div>
 
                 <button className="btn-enter" type="submit" disabled>enter</button>
