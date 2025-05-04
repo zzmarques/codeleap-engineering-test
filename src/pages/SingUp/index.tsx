@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SignUpModal from "../../components/SignUpModal";
 import IntroSection from "../../components/IntroSection";
 
 
 const SingUp = () => {
-    return (
 
+    const [ sing, setSing ] = useState(false);
+
+    const getSing = (dado) => {
+        setSing(dado);
+    };
+    
+    return (
         <main className="sing-up">
-            <IntroSection/>
-            {/* <SignUpModal/> */}
+            {
+                sing ? <SignUpModal/> : <IntroSection sendSing={getSing}/>
+            }            
         </main>
     );
 };
