@@ -1,0 +1,9 @@
+@use '../vars';
+@use '../mixins';
+
+.intro-section {
+    @include mixins.card;
+    @include mixins.center;
+    flex-direction: column;
+    gap: 20px;
+}

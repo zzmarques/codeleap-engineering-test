@@ -1,11 +1,12 @@
-import './sass/main.scss'
+import SingUp from './pages/SingUp';
+import './sass/main.scss';
 
 
 function App() {
 
   return (
     <>
-      <h1>Codeleap Engineering Test</h1>
+      <SingUp/>
     </>
   )
 }

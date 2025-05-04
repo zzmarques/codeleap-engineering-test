@@ -1,0 +1,11 @@
+@use '../vars';
+@use '../mixins';
+
+.sing-up {
+    @include mixins.center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100dvh;
+    background-color: vars.$gray-100;
+}

@@ -1,0 +1,48 @@
+@use '../mixins';
+@use '../vars';
+
+.SignUpModal {
+    @include mixins.card;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .form-sing-up {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 20px;
+        width: 100%;
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+
+            label {
+                font-size: 16px;
+                font-weight: 400;
+                color: vars.$black-color;
+            }
+
+            input[type="text"] {
+                height: 32px;
+                border: 1px solid vars.$gray-400;
+                border-radius: 8px;
+                padding-left: 15px;
+
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 400px;
+                    color: vars.$gray-200;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
