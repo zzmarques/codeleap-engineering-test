@@ -17,10 +17,8 @@ const SignUpModal = () => {
     };
 
     const handleValidator = () => {
-        const nameInput = document.querySelector('#name') as HTMLInputElement;
-
-        if (!nameInput) return;
-
+        const nameInput = document.querySelector('#name');
+        
         if (nameInput.value === '') {
             showError(nameInput);
         } else {
