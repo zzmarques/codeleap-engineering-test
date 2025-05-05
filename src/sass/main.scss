@@ -1,6 +1,7 @@
 @use 'vars';
 @use 'buttons.scss' as *;
 @use 'pages/SingUp' as *;
+@use 'pages/Home' as *;
 @use 'components/IntroSection' as *;
 @use 'components/SignUpModal' as *;
 @use 'components/Header' as *;
@@ -8,6 +9,7 @@
 @use 'components/Container' as *;
 @use 'components/Mind' as *;
 @use 'components/FormPost' as *;
+@use 'components/CardPost' as *;
 
 * {
     padding: 0;

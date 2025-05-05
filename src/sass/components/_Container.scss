@@ -1,7 +1,12 @@
 @use '../vars';
 
 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
     height: 100vh;
     padding: 20px;
+    margin: 0 auto;
     background-color: vars.$white-color;
 }

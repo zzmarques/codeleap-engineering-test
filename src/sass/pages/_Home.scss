@@ -1,0 +1,8 @@
+@use '../mixins';
+
+.container-posts {
+    @include mixins.scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

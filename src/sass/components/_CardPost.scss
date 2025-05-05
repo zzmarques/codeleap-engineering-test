@@ -1,0 +1,70 @@
+@use '../mixins';
+@use '../vars';
+
+.card-post {
+    @include mixins.cardsMind;
+    padding: 0;
+
+    .header-post {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        padding-inline: 20px;
+        background-color: vars.$primary-color;
+        border-radius: 16px 16px 0px 0px;
+
+        .container-title {
+
+            h1 {
+                font-size: 19px;
+                color: vars.$white-color;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 200px;
+            }
+        }
+
+        .container-btns {
+            display: flex;
+            gap: 10px;
+        }
+    }
+
+    .main-post {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+
+        .cabecalho-post {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .user-name {
+                @include mixins.text(700);
+            }
+
+            .time-post {
+                @include mixins.text(400);
+            }
+        }
+
+        .container-text {
+            @include mixins.scroll;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            height: 250px;
+
+            p {
+                @include mixins.text(400);
+                color: vars.$black-color;
+            }
+
+        }
+    }
+}
