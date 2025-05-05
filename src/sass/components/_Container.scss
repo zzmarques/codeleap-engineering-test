@@ -1,0 +1,7 @@
+@use '../vars';
+
+.container {
+    height: 100vh;
+    padding: 20px;
+    background-color: vars.$white-color;
+}

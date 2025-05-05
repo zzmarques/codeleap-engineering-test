@@ -21,7 +21,6 @@
 }
 
 .btn-sing-up {
-    @extend .btn;
     width: 120px;
     height: 35px;
     opacity: 1;
@@ -32,6 +31,6 @@
     }
 }
 
-.btn-enter {
-    @extend .btn;
+.btn-create {
+    text-transform: none;
 }

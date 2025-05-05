@@ -9,7 +9,7 @@ const IntroSection = ({ sendSing }) => {
     return (
         <section className="intro-section">
             <h1>Olá, seja bem-vindo(a)!</h1>
-            <button onClick={handleSing} className="btn-sing-up">Sign Up</button>
+            <button onClick={handleSing} className="btn btn-sing-up">Sign Up</button>
         </section>
     );
 };

@@ -1,11 +1,21 @@
+@use 'vars';
 @use 'buttons.scss' as *;
 @use 'pages/SingUp' as *;
 @use 'components/IntroSection' as *;
 @use 'components/SignUpModal' as *;
+@use 'components/Header' as *;
+@use 'components/Logo' as *;
+@use 'components/Container' as *;
+@use 'components/Mind' as *;
+@use 'components/FormPost' as *;
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: vars.$gray-100;
 }

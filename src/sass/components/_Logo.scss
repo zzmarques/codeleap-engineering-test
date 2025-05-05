@@ -1,0 +1,11 @@
+@use '../vars';
+
+.logo {
+
+    h1 {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 100%;
+        color: vars.$white-color;
+    }
+}

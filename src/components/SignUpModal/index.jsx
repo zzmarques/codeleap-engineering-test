@@ -41,7 +41,7 @@ const SignUpModal = () => {
                     {spanErro && <span className="error">Please enter your name.</span>}
                 </div>
 
-                <button className="btn-enter" type="submit" disabled>enter</button>
+                <button className="btn btn-enter" type="submit" disabled>enter</button>
             </form>
         </section>
     );
