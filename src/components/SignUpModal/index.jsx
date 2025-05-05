@@ -1,31 +1,15 @@
 import React, { useState } from "react";
+import { handleValidator } from "../../utils/formvalidator";
 
 const SignUpModal = () => {
 
     const [spanErro, setSpanErro] = useState(false);
 
-    const showError = (input) => {
-        input.classList.add('erro');
-        setTimeout(() => {
-            setSpanErro(true);
-        }, 520)
+    const handleValid = (e) => {
+        const el = e.target;
+        handleValidator(el);
+        el.classList.contains('erro') ? setTimeout(() => setSpanErro(true), 520) : setSpanErro(false);
     };
-
-    const hiddenError = (input) => {
-        input.classList.remove('erro');
-        setSpanErro(false);
-    };
-
-    const handleValidator = () => {
-        const nameInput = document.querySelector('#name');
-        
-        if (nameInput.value === '') {
-            showError(nameInput);
-        } else {
-            hiddenError(nameInput);
-        }
-    };
-
 
     return (
         <section className="SignUpModal">
@@ -37,7 +21,7 @@ const SignUpModal = () => {
             >
                 <div className="form-group">
                     <label htmlFor="name">Please enter your username</label>
-                    <input onInput={handleValidator} type="text" name="name" id="name" placeholder="John doe"/>
+                    <input onInput={handleValid} type="text" name="name" id="name" placeholder="John doe"/>
                     {spanErro && <span className="error">Please enter your name.</span>}
                 </div>
 
