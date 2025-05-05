@@ -1,5 +1,7 @@
 import CardPost from "../../components/CardPost";
 import Container from "../../components/Container";
+import Delete from "../../components/Delete";
+import Edit from "../../components/Edit";
 import Header from "../../components/Header";
 import Mind from "../../components/Mind";
 
@@ -13,6 +15,8 @@ const Home = () => {
                     <CardPost/>
                     <CardPost/>
                 </section>
+                {/* <Delete/> */}
+                {/* <Edit/> */}
             </Container>
         </>
     );

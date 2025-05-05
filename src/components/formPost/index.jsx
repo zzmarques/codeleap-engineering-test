@@ -1,6 +1,6 @@
-import React from 'react'
+import ContainerBtns from '../ContainerBtns';
 
-const FormPost = () => {
+const FormPost = ({ children }) => {
     return (
         <form className='form-post'>
             <div className='form-group'>
@@ -13,7 +13,9 @@ const FormPost = () => {
                 <textarea name="" id="" placeholder='Content here'></textarea>
             </div>
 
-            <button className='btn btn-create'>Create</button>
+            <ContainerBtns>
+                { children }
+            </ContainerBtns>
         </form>
     );
 };

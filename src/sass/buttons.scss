@@ -50,3 +50,26 @@
         color: vars.$white-color;
     }
 }
+
+
+.btn-dele,
+.btn-cancel,
+.btn-save {
+    width: 120px;
+    text-decoration: none;
+}
+
+.btn-dele {
+    background-color: vars.$red-color;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    border: 1px solid vars.$gray-500;
+
+    color: vars.$black-color;
+}
+
+.btn-save {
+    background-color: vars.$green-color;
+}

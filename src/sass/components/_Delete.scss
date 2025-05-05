@@ -1,0 +1,7 @@
+@use '../mixins';
+@use '../vars';
+
+.delete {
+    @include mixins.cardsDE;
+    height: 146px;
+}

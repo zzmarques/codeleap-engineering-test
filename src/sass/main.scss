@@ -10,6 +10,9 @@
 @use 'components/Mind' as *;
 @use 'components/FormPost' as *;
 @use 'components/CardPost' as *;
+@use 'components/Delete' as *;
+@use 'components/Edit' as *;
+@use 'components/ContainerBtns' as *;
 
 * {
     padding: 0;

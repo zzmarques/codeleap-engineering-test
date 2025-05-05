@@ -1,0 +1,6 @@
+@use '../mixins';
+
+.edit {
+    @include mixins.cardsDE;
+    height: 334px;
+}
