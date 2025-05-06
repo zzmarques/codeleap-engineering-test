@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { handleValidator } from "../../utils/formvalidator";
-import { setUser } from "../../utils/user";
+import { setUser } from "../../utils/userPost";
+
 
 
 const SignUpModal = ({ sendState }) => {

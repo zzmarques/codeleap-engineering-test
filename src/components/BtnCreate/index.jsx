@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { creatPost } from '../../utils/creatPost'
+import { creatPost } from '../../utils/userPost';
 
 const BtnCreate = () => {
 
