@@ -6,11 +6,15 @@ const hiddenError = (input) => {
     input.classList.remove('erro');
 };
 
-export const handleValidator = (nameInput) => {
-    
-    if (nameInput.value === '') {
-        showError(nameInput);
-    } else {
-        hiddenError(nameInput);
-    }
+export const handleValidator = () => {
+    const form = document.querySelector('form');
+    const campos = form.querySelectorAll('input, textarea');
+
+    campos.forEach(el => {
+        if (el.value === '') {
+            showError(el);
+        } else {
+            hiddenError(el);
+        }
+    })
 };

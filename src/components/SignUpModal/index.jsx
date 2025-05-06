@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { handleValidator } from "../../utils/formvalidator";
+import { setUser } from "../../utils/user";
+
 
 const SignUpModal = () => {
 
@@ -7,9 +9,15 @@ const SignUpModal = () => {
 
     const handleValid = (e) => {
         const el = e.target;
-        handleValidator(el);
+        handleValidator();
         el.classList.contains('erro') ? setTimeout(() => setSpanErro(true), 520) : setSpanErro(false);
-    };
+    }
+
+    const handleUser = () => {
+        const nameUser = document.querySelector('#name').value;
+        setUser(nameUser);
+    }
+
 
     return (
         <section className="SignUpModal">
@@ -25,7 +33,7 @@ const SignUpModal = () => {
                     {spanErro && <span className="error">Please enter your name.</span>}
                 </div>
 
-                <button className="btn btn-enter" type="submit" disabled>enter</button>
+                <button onClick={handleUser} className="btn btn-enter" type="submit" >enter</button>
             </form>
         </section>
     );
