@@ -3,18 +3,22 @@ import SignUpModal from "../../components/SignUpModal";
 import IntroSection from "../../components/IntroSection";
 
 
-const SingUp = () => {
+const SingUp = ({ success }) => {
 
     const [ sing, setSing ] = useState(false);
 
     const getSing = (dado) => {
         setSing(dado);
     };
+
+    const getState = (state) => {
+        success(state)
+    }
     
     return (
         <main className="sing-up">
             {
-                sing ? <SignUpModal/> : <IntroSection sendSing={getSing}/>
+                sing ? <SignUpModal sendState={getState}/> : <IntroSection sendSing={getSing}/>
             }            
         </main>
     );

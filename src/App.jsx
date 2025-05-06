@@ -8,14 +8,14 @@ function App() {
 
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  const getSuccess = (state) => {
+    setLoading(state);
+  }
 
   return (
     <>
       {
-        loading ? <Home/> : <SingUp/>
+        loading ? <Home/> : <SingUp success={getSuccess}/>
       }
     </>
   )

@@ -3,21 +3,23 @@ import { handleValidator } from "../../utils/formvalidator";
 import { setUser } from "../../utils/user";
 
 
-const SignUpModal = () => {
+const SignUpModal = ({ sendState }) => {
 
     const [spanErro, setSpanErro] = useState(false);
 
     const handleValid = (e) => {
         const el = e.target;
-        handleValidator();
+        handleValidator(el);
         el.classList.contains('erro') ? setTimeout(() => setSpanErro(true), 520) : setSpanErro(false);
     }
 
     const handleUser = () => {
         const nameUser = document.querySelector('#name').value;
         setUser(nameUser);
+        setTimeout(() => {
+            sendState(true);
+        }, 2000);
     }
-
 
     return (
         <section className="SignUpModal">

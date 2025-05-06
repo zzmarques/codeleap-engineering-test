@@ -1,6 +1,14 @@
+import { useState } from 'react';
+import { handleValidator } from '../../utils/formvalidator';
 import ContainerBtns from '../ContainerBtns';
 
 const FormPost = ({ children }) => {
+
+    const handleValid = (e) => {
+        const el = e.target;
+        handleValidator(el);
+    }
+
     return (
         <form 
             className='form-post'
@@ -8,12 +16,12 @@ const FormPost = ({ children }) => {
         >
             <div className='form-group'>
                 <label htmlFor="title">Title</label>
-                <input type="text" name="title" id="title" placeholder='Hello world'/>
+                <input onInput={handleValid} type="text" name="title" id="title" placeholder='Hello world'/>
             </div>
 
             <div className='form-group'>
                 <label htmlFor="content">Content</label>
-                <textarea name="form-post" id="content" placeholder='Content here'></textarea>
+                <textarea onInput={handleValid} name="form-post" id="content" placeholder='Content here'></textarea>
             </div>
 
             <ContainerBtns>

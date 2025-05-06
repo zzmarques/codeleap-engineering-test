@@ -1,13 +1,11 @@
 
 import React from 'react'
-import { handleValidator } from '../../utils/formvalidator'
-
-
+import { creatPost } from '../../utils/creatPost'
 
 const BtnCreate = () => {
 
     const handleCreate = () => {
-        handleValidator('sla')
+        creatPost();
     }
 
     return (

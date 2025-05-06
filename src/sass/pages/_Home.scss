@@ -3,6 +3,7 @@
 .container-posts {
     @include mixins.scroll;
     display: flex;
+    height: 580px;
     flex-direction: column;
     gap: 20px;
 }
