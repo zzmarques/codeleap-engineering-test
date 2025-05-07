@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TbTrashXFilled } from "react-icons/tb";
 import { FaRegEdit } from "react-icons/fa";
+import Delete from '../Delete';
+import Edit from '../Edit';
 
-const CardPost = ({ name, title, text, sendOp}) => {
+const CardPost = ({ name, title, text}) => {
+
+    const [ del, setDel ] = useState(false);
+    const [ edit, setEdit ] = useState(false);
 
     const handleShow = (e) => {
         const btn = e.currentTarget
-        btn.classList.contains('btn-delete') ? sendOp('del') : sendOp('edit');
+        btn.classList.contains('btn-delete') ? setDel(true) : setEdit(true);
     }
 
     return (
         <section className='card-post'>
             <header className='header-post'>
                 <div className='container-title'>
-                    <h1>{ title }</h1>
+                    <h1 className='title'>{ title }</h1>
                 </div>
                 <div className='container-btns'>
                     <button onClick={handleShow} className='btn-delete'><TbTrashXFilled /></button>
@@ -31,6 +36,8 @@ const CardPost = ({ name, title, text, sendOp}) => {
                     </p>
                 </section>
             </main>
+            {del && <Delete/>}
+            {edit && <Edit/>}
         </section>
     )
 }

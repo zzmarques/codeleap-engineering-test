@@ -20,8 +20,17 @@ export const PostProvider = ({ children }) => {
         setUser(prevUser => [...prevUser, postData]);
     };   
 
+    const deletePost = (title) => {
+        setPost((prevPosts) => prevPosts.filter((p) => p.title !== title));
+        setUser((prevUsers) => prevUsers.filter((u) => u.title !== title));
+    }
+
+    console.log(post);
+    console.log(user);
+    
+
     return (
-        <PostContext.Provider value={{ post, user, updatePost }}>
+        <PostContext.Provider value={{ post, user, updatePost, deletePost }}>
         {children}
         </PostContext.Provider>
     );

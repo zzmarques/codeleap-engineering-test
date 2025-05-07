@@ -3,6 +3,7 @@ import BtnDelete from '../BtnDelete';
 import ContainerBtns from '../ContainerBtns';
 
 const Delete = () => {
+
     return (
         <section className="cardOp delete">
             <h1>Are you sure you want to delete this item?</h1>

@@ -8,14 +8,9 @@ import Mind from "../../components/Mind";
 import { usePosts } from "../../contexts/PostsContext";
 
 const Home = () => {
-    const [ del, setDel ] = useState(false);
-    const [ edit, setEdit ] = useState(false);
     
     const { post } = usePosts();
 
-    const getOp = (op) => {
-        op === 'del' ? setDel(true) : setEdit(true);
-    }
     return (
         <>
             <Header/>
@@ -29,13 +24,11 @@ const Home = () => {
                                 name={el.name}
                                 title={el.title}
                                 text={el.text}
-                                sendOp={getOp}
                             />
                         )) : '' 
                     }
                 </section>
-                {del && <Delete/>}
-                {edit && <Edit/>}
+                
             </Container>
         </>
     );

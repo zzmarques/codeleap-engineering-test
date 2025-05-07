@@ -21,10 +21,10 @@ export class userPost {
     }
 }
 
-export let user;
+export let userName;
 
 export const setUser = (nameUser) => {
-    user = nameUser;
+    userName = nameUser;
 }
 
 
