@@ -1,31 +1,32 @@
-import { useEffect, useState } from "react";
 import CardPost from "../../components/CardPost";
 import Container from "../../components/Container";
 import Delete from "../../components/Delete";
 import Edit from "../../components/Edit";
 import Header from "../../components/Header";
 import Mind from "../../components/Mind";
+import { usePosts } from "../../contexts/PostsContext";
 
 const Home = () => {
 
-    
+    const { post } = usePosts();
+
     return (
         <>
             <Header/>
             <Container>
                 <Mind/>
-                    {/* {
-                        user.posts.length > 0 ? user.posts.map((el, i) => (
-                            <section className="container-posts">
-                                <CardPost
-                                    key={i}
-                                    name={el.name}
-                                    title={el.title}
-                                    text={el.text}
-                                />
-                            </section>
+                <section className="container-posts">
+                    {
+                        post.length > 0 ? post.map((el, i) => (
+                            <CardPost
+                                key={i}
+                                name={el.name}
+                                title={el.title}
+                                text={el.text}
+                            />
                         )) : '' 
-                    } */}
+                    }
+                </section>
             </Container>
         </>
     );

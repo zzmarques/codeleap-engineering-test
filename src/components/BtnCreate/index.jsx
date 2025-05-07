@@ -1,11 +1,18 @@
 
 import React from 'react'
-import { creatPost } from '../../utils/userPost';
+import { user, userPost } from '../../utils/userPost';
+import { usePosts } from '../../contexts/PostsContext';
 
 const BtnCreate = () => {
+    const { updatePost } = usePosts();
 
     const handleCreate = () => {
-        creatPost();
+        const form = document.querySelector('form');
+        const title = form.querySelector('input').value;
+        const text = form.querySelector('textarea').value;
+        
+        const newPost = new userPost(user,title, text);
+        updatePost(newPost);
     }
 
     return (

@@ -21,30 +21,10 @@ export class userPost {
     }
 }
 
-let user;
-export let postsArr = [];
+export let user;
 
 export const setUser = (nameUser) => {
     user = nameUser;
 }
-
-export const creatPost = () => {
-    const form = document.querySelector('form');
-    const title = form.querySelector('input').value;
-    const text = form.querySelector('textarea').value;
-
-    const newPost = new userPost(user,title, text);
-
-    postsArr.push({
-        name: newPost.name,
-        title: newPost.title,
-        text: newPost.text
-    });
-
-    const novosDados = [...postsArr];
-
-    postsArr = novosDados;
-}
-
 
 

@@ -62,6 +62,7 @@
 
             p {
                 @include mixins.text(400);
+                word-break: break-all;
                 color: vars.$black-color;
             }
 
