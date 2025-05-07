@@ -4,7 +4,7 @@ import FormPost from '../formPost';
 
 const Edit = () => {
     return (
-        <section className='edit'>
+        <section className='cardOp edit'>
             <h1>Edit item</h1>
 
             <FormPost>

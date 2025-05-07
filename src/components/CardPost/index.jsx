@@ -2,7 +2,13 @@ import React from 'react'
 import { TbTrashXFilled } from "react-icons/tb";
 import { FaRegEdit } from "react-icons/fa";
 
-const CardPost = ({ name, title, text }) => {
+const CardPost = ({ name, title, text, sendOp}) => {
+
+    const handleShow = (e) => {
+        const btn = e.currentTarget
+        btn.classList.contains('btn-delete') ? sendOp('del') : sendOp('edit');
+    }
+
     return (
         <section className='card-post'>
             <header className='header-post'>
@@ -10,8 +16,8 @@ const CardPost = ({ name, title, text }) => {
                     <h1>{ title }</h1>
                 </div>
                 <div className='container-btns'>
-                    <button className='btn-delete'><TbTrashXFilled /></button>
-                    <button className='btn-edit'><FaRegEdit /></button>
+                    <button onClick={handleShow} className='btn-delete'><TbTrashXFilled /></button>
+                    <button onClick={handleShow}className='btn-edit'><FaRegEdit /></button>
                 </div>
             </header>
             <main className='main-post'>
