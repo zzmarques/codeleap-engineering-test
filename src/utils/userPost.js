@@ -5,20 +5,6 @@ export class userPost {
         this.title = title;
         this.text = text;
     }
-
-    del() {
-        console.log('Deletado');
-    }
-
-    edit() {
-        console.log('Editado');
-    }
-
-    show() {
-        console.log(this.name);
-        console.log(this.title);
-        console.log(this.text);
-    }
 }
 
 export let userName;

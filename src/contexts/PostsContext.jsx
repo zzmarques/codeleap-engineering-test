@@ -25,12 +25,24 @@ export const PostProvider = ({ children }) => {
         setUser((prevUsers) => prevUsers.filter((u) => u.title !== title));
     }
 
-    console.log(post);
-    console.log(user);
-    
+    const editPost = (title, infoEdit) => {
+        const [editTitle, editText] = infoEdit;
+
+        setPost(prevPosts =>
+            prevPosts.map(p =>
+                p.title === title ? { ...p, title: editTitle, text: editText } : p
+            )
+        );
+
+        setUser(prevUsers =>
+            prevUsers.map(u =>
+                u.title === title ? { ...u, title: editTitle, text: editText } : u
+            )
+        );
+    }
 
     return (
-        <PostContext.Provider value={{ post, user, updatePost, deletePost }}>
+        <PostContext.Provider value={{ post, user, updatePost, deletePost, editPost }}>
         {children}
         </PostContext.Provider>
     );
