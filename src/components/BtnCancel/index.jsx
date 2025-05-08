@@ -1,13 +1,8 @@
 
-const BtnCancel = () => {
-
-    const handleCancel = (e) => {
-        const card = e.currentTarget.closest('.cardOp');
-        card.remove();
-    }
+const BtnCancel = ({ onCancel }) => {
 
     return (
-        <button onClick={handleCancel} className="btn btn-cancel">Cancel</button>
+        <button onClick={onCancel}  className="btn btn-cancel">Cancel</button>
     );
 };
 

@@ -6,13 +6,21 @@ import Edit from '../Edit';
 
 const CardPost = ({ name, title, text}) => {
 
-    const [ del, setDel ] = useState(false);
-    const [ edit, setEdit ] = useState(false);
+    const [modal, setModal] = useState(null);
 
     const handleShow = (e) => {
-        const btn = e.currentTarget
-        btn.classList.contains('btn-delete') ? setDel(true) : setEdit(true);
-    }
+        const btn = e.currentTarget;
+        if (btn.classList.contains('btn-delete')) {
+            setModal('delete');
+        } else {
+            setModal('edit');
+        }
+    };
+
+    const closeModal = () => {
+        console.log("Modal fechando...");
+        setModal(null);
+    };
 
     return (
         <section className='card-post'>
@@ -36,8 +44,8 @@ const CardPost = ({ name, title, text}) => {
                     </p>
                 </section>
             </main>
-            {del && <Delete/>}
-            {edit && <Edit/>}
+            {modal === 'delete' && <Delete onClose={closeModal} />}
+            {modal === 'edit' && <Edit onClose={closeModal} />}
         </section>
     )
 }
