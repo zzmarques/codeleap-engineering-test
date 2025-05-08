@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TbTrashXFilled } from "react-icons/tb";
 import { FaRegEdit } from "react-icons/fa";
 import Delete from '../Delete';
 import Edit from '../Edit';
 
-const CardPost = ({ name, title, text}) => {
+const CardPost = ({ name, title, text, createdAt }) => {
 
     const [modal, setModal] = useState(null);
-
+    const [minutesAgo, setMinutesAgo] = useState(0);
     const handleShow = (e) => {
         const btn = e.currentTarget;
         if (btn.classList.contains('btn-delete')) {
@@ -18,9 +18,21 @@ const CardPost = ({ name, title, text}) => {
     };
 
     const closeModal = () => {
-        console.log("Modal fechando...");
         setModal(null);
     };
+
+    useEffect(() => {
+        const updateTime = () => {
+            const now = Date.now();
+            const diff = Math.floor((now - createdAt) / 60000);
+            setMinutesAgo(diff);
+        };
+
+        updateTime();
+        const interval = setInterval(updateTime, 60000);
+
+        return () => clearInterval(interval);
+    }, [createdAt]);
 
     return (
         <section className='card-post'>
@@ -35,8 +47,8 @@ const CardPost = ({ name, title, text}) => {
             </header>
             <main className='main-post'>
                 <section className='cabecalho-post'>
-                    <span className='user-name'>@ { name }</span>
-                    <span className='time-post'>25 minutes ago</span>
+                    <span className='user-name'>@{ name }</span>
+                    <span className='time-post'>{minutesAgo} minutes ago</span>
                 </section>
                 <section className='container-text'>
                     <p>
@@ -44,8 +56,13 @@ const CardPost = ({ name, title, text}) => {
                     </p>
                 </section>
             </main>
-            {modal === 'delete' && <Delete onClose={closeModal} />}
-            {modal === 'edit' && <Edit onClose={closeModal} />}
+                {modal && (
+                    <>
+                        <div className="backdrop" onClick={closeModal}></div>
+                        {modal === 'delete' && <Delete onClose={closeModal} />}
+                        {modal === 'edit' && <Edit onClose={closeModal} />}
+                    </>
+                )}
         </section>
     )
 }

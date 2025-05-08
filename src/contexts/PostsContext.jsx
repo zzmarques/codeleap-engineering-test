@@ -13,7 +13,8 @@ export const PostProvider = ({ children }) => {
         const post = {
             name: postData.name,
             title: postData.title,
-            text: postData.text
+            text: postData.text,
+            createdAt: Date.now()
         };
 
         setPost(prevPosts => [...prevPosts, post]);
@@ -30,13 +31,23 @@ export const PostProvider = ({ children }) => {
 
         setPost(prevPosts =>
             prevPosts.map(p =>
-                p.title === title ? { ...p, title: editTitle, text: editText } : p
+                p.title === title 
+                ? {
+                    ...p,
+                    title: editTitle.trim() !== '' ? editTitle : p.title,
+                    text: editText.trim() !== '' ? editText : p.text
+                } : p
             )
         );
 
         setUser(prevUsers =>
             prevUsers.map(u =>
-                u.title === title ? { ...u, title: editTitle, text: editText } : u
+                u.title === title 
+                ? {
+                    ...u,
+                    title: editTitle.trim() !== '' ? editTitle : u.title,
+                    text: editText.trim() !== '' ? editText : u.text
+                } : u
             )
         );
     }

@@ -20,7 +20,6 @@ const SignUpModal = ({ sendState }) => {
 
     const handleUser = () => {
         const nameUser = document.querySelector('#name').value;
-        console.log('ok');
         
         setUser(nameUser);
         setLoad(true);

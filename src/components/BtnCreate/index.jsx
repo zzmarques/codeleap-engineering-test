@@ -1,5 +1,3 @@
-
-import React from 'react'
 import { userName, userPost } from '../../utils/userPost';
 import { usePosts } from '../../contexts/PostsContext';
 

@@ -1,12 +1,14 @@
 import { usePosts } from "../../contexts/PostsContext";
 
-const BtnDelete = () => {
+const BtnDelete = ({ onCancel }) => {
     const { deletePost } = usePosts();
     
     const handleDelete = (e) => {
         const card = e.currentTarget.closest('.card-post');   
         const title = card.querySelector('h1').innerText;
-        deletePost(title)
+        deletePost(title);
+        
+        onCancel();
     }
 
     return (

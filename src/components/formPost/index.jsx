@@ -1,11 +1,15 @@
-import { handleValidator } from '../../utils/formvalidator';
+import { editValidator, handleValidator } from '../../utils/formvalidator';
 import ContainerBtns from '../ContainerBtns';
 
-const FormPost = ({ children, enable, disable }) => {
+const FormPost = ({ children, enable, disable, isEdit = false }) => {
     
     const handleValid = (e) => {
         const el = e.target;
-        handleValidator(el, disable, enable);
+        if (isEdit) {
+            editValidator(el, disable, enable);
+        } else {
+            handleValidator(el, disable, enable);
+        }
     }
 
     return (

@@ -24,6 +24,7 @@ const Home = () => {
                                 name={el.name}
                                 title={el.title}
                                 text={el.text}
+                                createdAt={el.createdAt}
                             />
                         )) : '' 
                     }
