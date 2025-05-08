@@ -4,6 +4,7 @@ import Container from "../../components/Container";
 import Header from "../../components/Header";
 import Mind from "../../components/Mind";
 import "../../sass/pages/_Home.scss"
+import LoginNotification from "../../components/LoginNotification";
 
 const Home = () => {
     
@@ -11,6 +12,7 @@ const Home = () => {
 
     return (
         <>
+            <LoginNotification/>
             <Header/>
             <Container>
                 <Mind/>
@@ -27,7 +29,6 @@ const Home = () => {
                         )) : '' 
                     }
                 </section>
-                
             </Container>
         </>
     );
