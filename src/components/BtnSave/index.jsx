@@ -1,6 +1,6 @@
 import { usePosts } from "../../contexts/PostsContext";
 
-const BtnSave = () => {
+const BtnSave = ({ isDisabled, disable }) => {
 
     const { editPost } = usePosts()
 
@@ -14,10 +14,11 @@ const BtnSave = () => {
         const editInfo = [...inputs].map(el =>el.value);
 
         editPost(title, editInfo);
+        disable();
     }
 
     return (
-        <button onClick={handleedit} className="btn btn-save">Save</button>
+        <button onClick={handleedit} className="btn btn-save" disabled={isDisabled}>Save</button>
     );
 };
 

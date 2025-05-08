@@ -2,27 +2,31 @@ import React, { useState } from "react";
 import { handleValidator } from "../../utils/formvalidator";
 import { setUser } from "../../utils/userPost";
 import Load from "../Load";
+import useDisabled from "../../hooks/useDeisabled";
 
 
 
 const SignUpModal = ({ sendState }) => {
 
+    const { isDisabled, enable, disable } = useDisabled();
     const [spanErro, setSpanErro] = useState(false);
     const [load, setLoad] = useState(false);
 
     const handleValid = (e) => {
         const el = e.target;
-        handleValidator(el);
+        handleValidator(el, disable, enable);
         el.classList.contains('erro') ? setTimeout(() => setSpanErro(true), 520) : setSpanErro(false);
     }
 
     const handleUser = () => {
         const nameUser = document.querySelector('#name').value;
+        console.log('ok');
+        
         setUser(nameUser);
         setLoad(true);
         setTimeout(() => {
             sendState(true);
-        }, 2000);   
+        }, 2000); 
     }
 
     return (
@@ -41,7 +45,7 @@ const SignUpModal = ({ sendState }) => {
                         {spanErro && <span className="error">Please enter your name.</span>}
                     </div>
 
-                    <button onClick={handleUser} className="btn btn-enter" type="submit" >enter</button>
+                    <button onClick={handleUser} className="btn btn-enter des" type="submit" disabled={isDisabled}>enter</button>
                 </form>
             }
             

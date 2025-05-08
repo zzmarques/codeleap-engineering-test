@@ -1,12 +1,11 @@
-import { useState } from 'react';
 import { handleValidator } from '../../utils/formvalidator';
 import ContainerBtns from '../ContainerBtns';
 
-const FormPost = ({ children }) => {
-
+const FormPost = ({ children, enable, disable }) => {
+    
     const handleValid = (e) => {
         const el = e.target;
-        handleValidator(el);
+        handleValidator(el, disable, enable);
     }
 
     return (
