@@ -3,6 +3,8 @@ import BtnCancel from '../BtnCancel';
 import BtnSave from '../BtnSave';
 import BackDrop from '../BackDrop';
 import FormPost from '../formPost';
+import "../../sass/components/_Edit.scss";
+
 
 const Edit = ({ onClose }) => {
     const { isDisabled, enable, disable } = useDisabled();

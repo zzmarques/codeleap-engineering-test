@@ -1,4 +1,4 @@
-
+import "../../sass/components/_IntroSection.scss";
 
 const IntroSection = ({ sendSing }) => {
 

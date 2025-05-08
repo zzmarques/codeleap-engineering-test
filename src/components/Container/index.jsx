@@ -1,3 +1,4 @@
+import "../../sass/components/_Container.scss";
 
 const Container = ({ children }) => {
     return (

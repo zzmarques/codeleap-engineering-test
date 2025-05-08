@@ -1,3 +1,4 @@
+import "../../sass/components/_Logo.scss";
 
 const Logo = () => {
     return (

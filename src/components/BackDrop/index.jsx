@@ -1,3 +1,4 @@
+import "../../sass/components/_BackDrop.scss";
 
 const BackDrop = () => {
     return (

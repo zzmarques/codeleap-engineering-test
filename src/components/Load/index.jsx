@@ -1,3 +1,4 @@
+import "../../sass/components/_Load.scss";
 
 const Load = () => {
     return (

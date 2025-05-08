@@ -1,3 +1,4 @@
+import "../../sass/components/_ContainerBtns.scss";
 
 const ContainerBtns = ({ children }) => {
     return (

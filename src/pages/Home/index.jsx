@@ -1,11 +1,9 @@
-import { useState } from "react";
+import { usePosts } from "../../contexts/PostsContext";
 import CardPost from "../../components/CardPost";
 import Container from "../../components/Container";
-import Delete from "../../components/Delete";
-import Edit from "../../components/Edit";
 import Header from "../../components/Header";
 import Mind from "../../components/Mind";
-import { usePosts } from "../../contexts/PostsContext";
+import "../../sass/pages/_Home.scss"
 
 const Home = () => {
     

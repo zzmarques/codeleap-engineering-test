@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SignUpModal from "../../components/SignUpModal";
 import IntroSection from "../../components/IntroSection";
+import "../../sass/pages/_SingUp.scss"
 
 
 const SingUp = ({ success }) => {

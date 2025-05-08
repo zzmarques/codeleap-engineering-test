@@ -1,4 +1,5 @@
 import Logo from "../Logo";
+import "../../sass/components/_Header.scss";
 
 const Header = () => {
     return (

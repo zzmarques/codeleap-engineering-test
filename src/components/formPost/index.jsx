@@ -1,5 +1,6 @@
 import { editValidator, handleValidator } from '../../utils/formvalidator';
 import ContainerBtns from '../ContainerBtns';
+import "../../sass/components/_FormPost.scss";
 
 const FormPost = ({ children, enable, disable, isEdit = false }) => {
     

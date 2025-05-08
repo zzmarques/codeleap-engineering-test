@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { handleValidator } from "../../utils/formvalidator";
 import { setUser } from "../../utils/userPost";
 import Load from "../Load";
 import useDisabled from "../../hooks/useDeisabled";
-
-
+import "../../sass/components/_SignUpModal.scss";
 
 const SignUpModal = ({ sendState }) => {
 

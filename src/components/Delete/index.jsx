@@ -2,6 +2,7 @@ import BtnCancel from '../BtnCancel';
 import BtnDelete from '../BtnDelete';
 import BackDrop from '../BackDrop';
 import ContainerBtns from '../ContainerBtns';
+import "../../sass/components/_Delete.scss";
 
 const Delete = ({ onClose }) => {
 

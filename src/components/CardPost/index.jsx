@@ -3,11 +3,13 @@ import { TbTrashXFilled } from "react-icons/tb";
 import { FaRegEdit } from "react-icons/fa";
 import Delete from '../Delete';
 import Edit from '../Edit';
+import "../../sass/components/_CardPost.scss";
 
 const CardPost = ({ name, title, text, createdAt }) => {
 
     const [modal, setModal] = useState(null);
     const [minutesAgo, setMinutesAgo] = useState(0);
+    
     const handleShow = (e) => {
         const btn = e.currentTarget;
         if (btn.classList.contains('btn-delete')) {

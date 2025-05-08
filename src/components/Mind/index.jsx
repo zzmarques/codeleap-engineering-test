@@ -1,6 +1,7 @@
 import useDisabled from '../../hooks/useDeisabled';
 import BtnCreate from '../BtnCreate';
 import FormPost from '../formPost';
+import "../../sass/components/_Mind.scss";
 
 const Mind = () => {
     const { isDisabled, enable, disable } = useDisabled();
