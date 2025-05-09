@@ -2,8 +2,9 @@ import { usePosts } from "../../contexts/PostsContext";
 
 const BtnSave = ({onCancel, isDisabled, disable }) => {
 
-    const { editPost } = usePosts()
+    const { editPost } = usePosts(); // Função para editar post
 
+    // Função para lidar com a edição do post
     const handleedit = (e) => {
         const card = e.currentTarget.closest('.card-post');
         const title = card.querySelector('h1').innerText;
@@ -12,10 +13,10 @@ const BtnSave = ({onCancel, isDisabled, disable }) => {
         const inputs = form.querySelectorAll('input, textarea');
         const editInfo = [...inputs].map(el =>el.value);
 
-        editPost(title, editInfo);
-        inputs.forEach((el) => el.value = '')
-        disable();
-        onCancel();
+        editPost(title, editInfo); // Chama função para editar o post
+        inputs.forEach((el) => el.value = '')  // Limpa os campos após a edição
+        disable(); // Desabilita o botão de salvar
+        onCancel(); // Chama a função de cancelamento
     }
 
     return (

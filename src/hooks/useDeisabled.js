@@ -1,5 +1,7 @@
+// Hook de estado para controle de habilitação/desabilitação
 import { useState } from "react";
 
+// Função para criar hook de controle de estado desabilitado
 const useDisabled = (initialState = true) => {
     const [isDisabled, setIsDisabled] = useState(initialState);
 

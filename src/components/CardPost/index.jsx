@@ -10,6 +10,7 @@ const CardPost = ({ name, title, text, createdAt }) => {
     const [modal, setModal] = useState(null);
     const [minutesAgo, setMinutesAgo] = useState(0);
     
+     // Função para exibir de delete ou edit
     const handleShow = (e) => {
         const btn = e.currentTarget;
         if (btn.classList.contains('btn-delete')) {
@@ -19,10 +20,12 @@ const CardPost = ({ name, title, text, createdAt }) => {
         }
     };
 
+    // Função para fechamento de delete ou edit
     const closeModal = () => {
         setModal(null);
     };
 
+    // Calcular o tempo desde a criação do post
     useEffect(() => {
         const updateTime = () => {
             const now = Date.now();

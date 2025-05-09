@@ -11,12 +11,14 @@ const SignUpModal = ({ sendState }) => {
     const [spanErro, setSpanErro] = useState(false);
     const [load, setLoad] = useState(false);
 
+    // Função para validar campo input em tempo real
     const handleValid = (e) => {
         const el = e.target;
         handleValidator(el, disable, enable);
         el.classList.contains('erro') ? setTimeout(() => setSpanErro(true), 520) : setSpanErro(false);
     }
 
+     // Função para salvar usuário e iniciar carregamento
     const handleUser = () => {
         const nameUser = document.querySelector('#name').value;
         

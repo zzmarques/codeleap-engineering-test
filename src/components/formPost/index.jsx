@@ -4,6 +4,7 @@ import "../../sass/components/_FormPost.scss";
 
 const FormPost = ({ children, enable, disable, isEdit = false }) => {
     
+    // Função para validar campos com base no modo (edição ou criação)
     const handleValid = (e) => {
         const el = e.target;
         if (isEdit) {

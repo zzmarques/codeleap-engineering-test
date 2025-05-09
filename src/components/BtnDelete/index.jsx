@@ -1,14 +1,15 @@
 import { usePosts } from "../../contexts/PostsContext";
 
 const BtnDelete = ({ onCancel }) => {
-    const { deletePost } = usePosts();
+    const { deletePost } = usePosts(); // Função para deletar post
     
+    // Função para lidar com a exclusão do post
     const handleDelete = (e) => {
         const card = e.currentTarget.closest('.card-post');   
         const title = card.querySelector('h1').innerText;
-        deletePost(title);
-        
-        onCancel();
+
+        deletePost(title);// Chama função para deletar o post
+        onCancel(); // Chama a função de cancelamento
     }
 
     return (

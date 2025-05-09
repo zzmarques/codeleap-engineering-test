@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import { userName } from "../../utils/userPost";
 import "../../sass/components/_LoginNotification.scss";
-import { useEffect, useState } from "react";
 
 const LoginNotification = ({ onLogin }) => {
     const [ ani, setAni] = useState(false);
