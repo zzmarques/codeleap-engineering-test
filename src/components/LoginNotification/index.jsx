@@ -18,7 +18,7 @@ const LoginNotification = ({ onLogin }) => {
 
     return (
         <div className={`loginSucess ${ani ? 'desat' : ''}`}>
-            <h1>Login realizado com sucesso. Bem-vindo(a), <span> {userName}!</span></h1>
+            <h1>Login successful. Welcome, <span> {userName}!</span></h1>
         </div>
     )
 }

@@ -37,12 +37,8 @@
     transition: opacity 0.8s ease;
 
     h1 {
-        width: 220px;
+        width: 200px;
         font-size: clamp(16px, 0.62vw + 13.69px, 20px);
-
-        @include mixins.desktop {
-            width: 100%;
-        }
         span {
             color: vars.$primary-color;
             text-transform: uppercase;

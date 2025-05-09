@@ -2,6 +2,8 @@
 
 Este projeto foi desenvolvido como parte do processo seletivo para a vaga de **Desenvolvedor Front-End Jr.** na **Codeleap**. A aplicação permite que o usuário se cadastre, crie, edite e exclua postagens, utilizando **React** e outras tecnologias modernas.
 
+> 💡 Este projeto foi desenvolvido com o conceito **Mobile First**, garantindo uma ótima experiência em dispositivos móveis antes de ser adaptado para telas maiores.
+
 [🔗 Acesse a demo do projeto aqui](https://codeleap-engineering-test-one.vercel.app/)
 ---
 
