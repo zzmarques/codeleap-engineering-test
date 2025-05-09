@@ -1,3 +1,57 @@
+@use '../vars';
+@use '../mixins';
+@keyframes Login {
+    to {
+        top: 15px;
+    } from {
+        top: -90px;
+    }
+}
+
+@keyframes des {
+    to {
+        top: -90px;
+        opacity: 0;
+    } from {
+        top: 15px;
+        opacity: 1;
+    }
+}
+
+
 .loginSucess {
     position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    padding: 20px;
+    background: rgba( 255, 255, 255, 0.60 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 30px );
+    -webkit-backdrop-filter: blur( 30px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    animation: Login 0.7s 1 ease-in-out;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+
+    h1 {
+        width: 220px;
+        font-size: clamp(16px, 0.62vw + 13.69px, 20px);
+
+        @include mixins.desktop {
+            width: 100%;
+        }
+        span {
+            color: vars.$primary-color;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.desat {
+    animation: des 0.7s 1 ease-in-out;
+    opacity: 0;
+
 }

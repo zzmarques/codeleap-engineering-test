@@ -5,14 +5,20 @@ import Header from "../../components/Header";
 import Mind from "../../components/Mind";
 import "../../sass/pages/_Home.scss"
 import LoginNotification from "../../components/LoginNotification";
+import { useState } from "react";
 
 const Home = () => {
     
     const { post } = usePosts();
+    const [ log, setLog ] = useState(true);
 
+    const onLogin = () => {
+        setLog(false)
+    }
+    
     return (
         <>
-            <LoginNotification/>
+            {log && <LoginNotification onLogin={onLogin}/>}
             <Header/>
             <Container>
                 <Mind/>
