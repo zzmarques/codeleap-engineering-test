@@ -18,6 +18,7 @@ const FormPost = ({ children, enable, disable, isEdit = false }) => {
         <form 
             className='form-post'
             onSubmit={(e) => e.preventDefault()}
+            autocomplete="off"
         >
             <div className='form-group'>
                 <label htmlFor="title">Title</label>

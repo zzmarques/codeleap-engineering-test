@@ -38,6 +38,7 @@ const SignUpModal = ({ sendState }) => {
                 <form 
                     className="form-sing-up"
                     onSubmit={(e) => e.preventDefault()}
+                    autocomplete="off"
                 >
                     <div className="form-group">
                         <label htmlFor="name">Please enter your username</label>
